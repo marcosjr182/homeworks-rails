@@ -18,16 +18,20 @@ body {
   background: #e5e5e5;
 }
 header {
-  margin-top: 20px;
+  margin-top: 0.6em;
+  padding: 0.3em;
+  font-size: 2em;
+  font-weight: bold;
 }
+header >div {
+  padding-top: 0.4em;
+}
+
 .container  {
   background: #fff;
   margin-top: 3%;
   box-shadow: 1px 1px 3px #DADADA;}
 
-.panel-heading > button{
-  float: right;
-}
 .path {
   background: #427FED;
   color: #fff;
@@ -41,7 +45,8 @@ header {
 }
 
 .content{;
-
+  margin-top: 1.2em;
+  padding: 3%;
 }
 
 h1 {
