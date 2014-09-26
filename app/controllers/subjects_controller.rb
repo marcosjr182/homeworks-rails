@@ -5,6 +5,11 @@ class SubjectsController < ApplicationController
     @subject = @grade.subjects.create(subject_params)
     redirect_to grade_path(@grade)
   end
+  
+  def show
+    @grade = Grade.find(params[:grade_id])
+    @subject = @grade.subjects.find(params[:id])
+  end 
 
   def destroy
     @grade = Grade.find(params[:grade_id])

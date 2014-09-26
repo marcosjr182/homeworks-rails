@@ -1,14 +1,39 @@
+<div class="row">
+  <div class="col-md-12 path">
+    <%= @grade.name %>      
+  </div>
+</div>
 
+<header>
+  <div class="col-md-8 col-xs-5">
+    Subjects
+  </div>
+  <button type="button" class="btn btn-primary col-xs-5 col-md-4" data-toggle="collapse" data-target="#form">
+         New Subject
+  </button>
+</header>  
 
-<!-- ANTIGO -->
-<p id="notice"><%= notice %></p>
+<div id="form" class="collapse col-md-offset-8 col-md-4">
+  <div class="row">
+    <%= render "subjects/form" %>
+  </div>  
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @grade.name %>
-</p>
+<div class="row">
+  <div class="content col-md-12">
+    <table class="table table-default table-hover table-striped">
+      <tbody>
+        
+        <%= render @grade.subjects %>
 
-<%= render @grade.subjects %>
+      </tbody>
+    </table>    
+  </div>
+</div>
 
+<br>
 <%= link_to 'Edit', edit_grade_path(@grade) %> |
 <%= link_to 'Back', grades_path %>
+
+
+
