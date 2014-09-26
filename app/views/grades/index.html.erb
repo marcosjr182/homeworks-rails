@@ -5,32 +5,35 @@
 </div>
 
 <header>
-  <div class="col-md-8 col-xs-8">
+  <div class="col-md-8 col-xs-5">
     Grades
   </div>
-  <button type="button" class="btn btn-primary col-xs-4 col-md-2 col-md-offset-2" data-toggle="collapse" data-target="#form">
+  <button type="button" class="btn btn-primary col-xs-5 col-md-4" data-toggle="collapse" data-target="#form">
          New Grade
   </button>
 </header>  
 
-<div id="form" class="collapse col-md-12">
+<div id="form" class="collapse col-md-offset-8 col-md-4">
+  <div class="row">
     <%= render "form" %>
+  </div>  
 </div>
 
-<div class="row content">
-<table class="table table-default table-hover table-striped">
-
-  <tbody>
-    <% @grades.each do |grade| %>
-      <tr>
-        <td><%= grade.name %></td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="content col-md-12">
+    <table class="table table-default table-hover table-striped">
+      <tbody>
+        <% @grades.each do |grade| %>
+          <tr>
+            <td><%= grade.name %></td>
+            <td><%= link_to 'Show', grade %></td>
+            <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+            <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
 </div>
 
 <br>
