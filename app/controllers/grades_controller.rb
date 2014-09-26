@@ -4,6 +4,7 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
+    @grade = Grade.new
     @grades = Grade.all
   end
 
@@ -26,14 +27,10 @@ class GradesController < ApplicationController
   def create
     @grade = Grade.new(grade_params)
 
-    respond_to do |format|
-      if @grade.save
-        format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
-        format.json { render :show, status: :created, location: @grade }
-      else
-        format.html { render :new }
-        format.json { render json: @grade.errors, status: :unprocessable_entity }
-      end
+    if @grade.save
+      redirect_to grades_url
+    else
+      render 'new'
     end
   end
 
