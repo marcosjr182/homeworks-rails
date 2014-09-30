@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924214715) do
+ActiveRecord::Schema.define(version: 20140930231648) do
 
   create_table "grades", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "homeworks", force: true do |t|
+    t.string   "name"
+    t.date     "deadline"
+    t.integer  "subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "homeworks", ["subject_id"], name: "index_homeworks_on_subject_id"
 
   create_table "subjects", force: true do |t|
     t.string   "name"
