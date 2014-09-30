@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   def create
     @grade = Grade.find(params[:grade_id])  
@@ -9,6 +10,9 @@ class SubjectsController < ApplicationController
   def show
     @grade = Grade.find(params[:grade_id])
     @subject = @grade.subjects.find(params[:id])
+  end
+
+  def edit
   end 
 
   def destroy
@@ -21,6 +25,11 @@ class SubjectsController < ApplicationController
   private
     def subject_params
       params.require(:subject).permit(:name)
+    end
+
+    def set_subject
+      @grade = Grade.find(params[:grade_id])
+      @subject = @grade.subjects.find(params[:id])
     end
 
 end

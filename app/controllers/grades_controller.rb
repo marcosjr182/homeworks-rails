@@ -11,6 +11,7 @@ class GradesController < ApplicationController
   # GET /grades/1
   # GET /grades/1.json
   def show
+  
   end
 
   # GET /grades/new
