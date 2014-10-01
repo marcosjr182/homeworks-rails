@@ -1,6 +1,7 @@
 <tr>
   <td><%= subject.name %></td>
-  <td><%= link_to 'Show', url_for([@grade, subject]) %></td>
-  <td><a href="/grades/<%= @grade.id %>/subjects/<%= subject.id %>/edit">Edit</a></td>
-  <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td class="text-right">
+    <%= link_to 'Show', url_for([@grade, subject]), class: "btn btn-info" %>
+    <%= link_to 'Destroy', url_for([@grade, subject]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </td>
 </tr>

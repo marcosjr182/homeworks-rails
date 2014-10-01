@@ -25,7 +25,9 @@ header {
 header >div {
   padding-top: 0.4em;
 }
-
+td {
+  vertical-align: middle !important;
+}
 .form-horizontal {
   padding-top: 1em;
   background: #F9F9F9;
