@@ -23,6 +23,13 @@
 <div class="row">
   <div class="content col-md-12">
     <table class="table table-default table-hover table-striped">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Deadline</td>
+          <td colspan="3"></td>
+        </tr>
+      </thead>
       <tbody>
         <%= render @subject.homeworks %>
       </tbody>
@@ -31,8 +38,6 @@
 </div>
 
 <br>
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>
 
 
 
