@@ -20,6 +20,14 @@ class SubjectsController < ApplicationController
   def edit
   end 
 
+  def update
+    if @subject.update(subject_params)
+      redirect_to @grade
+    else
+      redirect_to @grade
+    end
+  end
+
   def destroy
     @grade = Grade.find(params[:grade_id])
     @subject = @grade.subjects.find(params[:id])

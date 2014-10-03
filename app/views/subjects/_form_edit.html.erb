@@ -1,8 +1,8 @@
-<%= form_for :grade, url: grades_path, html: {class: "form-horizontal", role: "form"} do |f| %>
+<%= form_for :subject, url: grade_subject_path(@grade,@subject),method: "patch", html: {class: "form-horizontal", role: "form"} do |f| %>
   
   <div class="form-group">
     <%= f.label :name, class: "col-sm-3 control-label" %>
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <%= f.text_field :name, class: "form-control" %>  
     </div>
   </div>

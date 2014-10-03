@@ -38,14 +38,10 @@ class GradesController < ApplicationController
   # PATCH/PUT /grades/1
   # PATCH/PUT /grades/1.json
   def update
-    respond_to do |format|
-      if @grade.update(grade_params)
-        format.html { redirect_to @grade, notice: 'Grade was successfully updated.' }
-        format.json { render :show, status: :ok, location: @grade }
-      else
-        format.html { render :edit }
-        format.json { render json: @grade.errors, status: :unprocessable_entity }
-      end
+    if @grade.update(grade_params)
+      redirect_to grades_path
+    else
+      redirect_to grades_path
     end
   end
 
