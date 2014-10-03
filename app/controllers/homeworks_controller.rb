@@ -1,6 +1,12 @@
 class HomeworksController < ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @grade = Grade.find(params[:grade_id])  
+    @subject = @grade.subjects.find(params[:subject_id])
+    redirect_to grade_subject_path(@grade,@subject)
+  end
+
   def create
     @grade = Grade.find(params[:grade_id])  
     @subject = @grade.subjects.find(params[:subject_id])

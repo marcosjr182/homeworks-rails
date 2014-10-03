@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12 path">
+    <%= @grade.name %> >     
+    <%= @subject.name %> >     
+    <%= @homework.name %>      
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_homework_path(@homework) %> |
-<%= link_to 'Back', homeworks_path %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h3><%= @homework.name %></h3>
+    <p>Deadline: <%= @homework.deadline %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-8 text-right">
+    <a href="../" class="btn btn-default">Voltar</a>
+    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#form">
+         Edit
+    </button>
+    <%= link_to 'Destroy', url_for([@grade, @subject, @homework]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+
+  </div>
+</div>
+
+<div class="row">
+  <div id="form" class="collapse col-md-offset-1 col-md-10">
+    <div class="row">
+      <%= render "form" %>
+    </div>  
+  </div>  
+</div>
+

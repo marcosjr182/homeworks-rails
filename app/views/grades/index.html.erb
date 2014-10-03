@@ -1,36 +1,30 @@
 <div class="row">
-  <div class="col-md-12 path">
-    
+  <div class="col-md-12 path" style="color: #196DED;">
+    .
   </div>
 </div>
 
-<header>
+<header class="col-md-10 col-md-offset-1">
+  
   <div class="col-md-8 col-xs-5">
     Grades
   </div>
   <button type="button" class="btn btn-primary col-xs-5 col-md-4" data-toggle="collapse" data-target="#form">
-         New Grade
+      New Grade
   </button>
 </header>  
 
-<div id="form" class="collapse col-md-offset-8 col-md-4">
+<div id="form" class="collapse col-md-offset-7 col-md-4">
   <div class="row">
     <%= render "form" %>
   </div>  
 </div>
 
 <div class="row">
-  <div class="content col-md-12">
+  <div class="content col-md-10 col-md-offset-1">
     <table class="table table-default table-hover table-striped">
       <tbody>
-        <% @grades.each do |grade| %>
-          <tr>
-            <td><%= grade.name %></td>
-            <td><%= link_to 'Show', grade %></td>
-            <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-            <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
+        <%= render @grades %>
       </tbody>
     </table>    
   </div>

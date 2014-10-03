@@ -1,6 +1,11 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @grade = Grade.find(params[:grade_id])
+    redirect_to grade_path(@grade)
+  end
+
   def create
     @grade = Grade.find(params[:grade_id])  
     @subject = @grade.subjects.create(subject_params)

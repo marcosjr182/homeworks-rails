@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "myHomeworks" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "MyHomeworks app" %>">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -13,12 +12,16 @@
   <body>
 
     <div class="container">
-        <div class="col-md-4">
-          <h1>myHomeworks</h1>
+        <div class="row logo">
+          <div class="col-md-4">
+            <h1><a href="/">myHomeworks</a></h1>
+          </div>  
         </div>
-    
-      <%= yield %>
-    
+        <%= yield %>  
+        <br>
+      <footer class="col-md-12">
+        myHomeworks | 2014
+      </footer>
     </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  

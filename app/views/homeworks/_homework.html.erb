@@ -1,9 +1,13 @@
+
 <tr>
   <td><%= homework.name %></td>
   <td><%= homework.deadline %></td>
   <td class="text-right">
     
     <%= link_to 'Show', url_for([@grade, @subject, homework]), class: "btn btn-info" %>
+
+    <a class="btn btn-warning" href="/grades/<%= @grade.id %>/subjects/<%= @subject.id%>/homeworks/<%= homework.id %>/edit">Edit</a>
+
     <%= link_to 'Destroy', url_for([@grade, @subject, homework]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   
   </td>

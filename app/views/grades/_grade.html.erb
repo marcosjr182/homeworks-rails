@@ -1,0 +1,8 @@
+  <tr>
+    <td><%= grade.name %></td>
+    <td class="text-right">
+      <%= link_to 'Show', grade, class: "btn btn-info" %>
+      <%= link_to 'Edit', edit_grade_path(grade), class: "btn btn-warning" %>
+      <%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </td>
+  </tr>

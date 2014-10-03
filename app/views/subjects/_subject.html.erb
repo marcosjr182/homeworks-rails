@@ -2,6 +2,7 @@
   <td><%= subject.name %></td>
   <td class="text-right">
     <%= link_to 'Show', url_for([@grade, subject]), class: "btn btn-info" %>
+    <a class="btn btn-warning" href="/grades/<%= @grade.id %>/subjects/<%= subject.id%>/edit">Edit</a>
     <%= link_to 'Destroy', url_for([@grade, subject]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   </td>
 </tr>

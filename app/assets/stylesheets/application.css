@@ -12,23 +12,37 @@
  *
  *= require_tree .
  *= require_self
- */
-
+ 
+ *= require bootstrap
+ *= require bootstrap-theme
+*/
 body {
   background: #e5e5e5;
 }
-header {
-  margin-top: 0.6em;
-  font-size: 2em;
+thead{
   font-weight: bold;
 }
-header >div {
-  padding-top: 0.4em;
+header {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0.6em;
 }
+
 td {
   vertical-align: middle !important;
 }
+.title{
+  vertical-align: middle;
+  font-family: Verdana;
+  font-size: 2.4em;
+}
+.logo {
+  background: #196DED;
+  color: #fff;
+}
+
 .form-horizontal {
+  margin-top: 2em;
   padding-top: 1em;
   background: #F9F9F9;
   border-bottom: 2px solid #427FED;
@@ -36,18 +50,18 @@ td {
 .container  {
   background: #fff;
   margin-top: 3%;
-  box-shadow: 1px 1px 3px #DADADA;}
+  box-shadow: 1px 1px 3px #DADADA;
+}
 
 .path {
-  background: #427FED;
+  background: #196DED;
   color: #fff;
-  font-size: 1.6em;
+  font-size: 1.2em;
   font-weight: bolder;
-  padding:5px;
-  padding-left:15px;
+  padding:0.4em;
+  padding-left:0.6em;
 
   text-transform: uppercase;
-  border-bottom: 3px solid #427FED;
 }
 
 .content{;
@@ -55,8 +69,22 @@ td {
 }
 
 h1 {
-  color: #427FED;
+  color: #FFF;
   font-weight: bolder;
   font-family: Arial;
-  letter-spacing: -0.5px;
+  letter-spacing: -1.3px;  
+} 
+h1 > a {
+    color:#FFF; 
+}
+a:hover{
+  text-decoration: none;
+}
+
+footer {
+  padding: 3em;
+  padding-bottom: 1em;
+  color: #427FED;
+  font-size: 1.2em;
+  text-align: center;
 }
